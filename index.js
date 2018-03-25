@@ -36,8 +36,16 @@ function handleEvent(event) {
   }
 
   // create a echoing text message
-  const echo = { type: 'text', text: "You said: " + event.message.text };
-
+    if(event.message.text == "hey")
+    {
+      const echo = { type: 'text', text: "Hey There, Your Message : " + event.message.text };
+    }else if(event.message.text.indexOf("faiq") >= 0)
+    {
+      const echo = { type: 'text', text: "OKay i am Forwarding this to Faiq, You Message: " + event.message.text };
+    }else
+    {
+      const echo = { type: 'text', text: "You said: " + event.message.text };
+    } 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
 }
