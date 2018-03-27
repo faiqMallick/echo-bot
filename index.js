@@ -2,7 +2,7 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
-const https = require('https');
+const http = require('http');
 var body = "";
 var echo = "";
 
@@ -44,7 +44,7 @@ function handleEvent(event) {
 
 
    //https.get('https://api.line.me/v2/bot/', (resp) => {
-    https.get('https://66.228.117.22/RestTest1/RestTest/', (resp) => {
+    http.get('http://66.228.117.22/RestTest1/RestTest/', (resp) => {
     // let data = '';
     console.log("httpin");
 
