@@ -4,6 +4,7 @@ const line = require('@line/bot-sdk');
 const express = require('express');
 const https = require('https');
 var body = "";
+var echo = "";
 
 // create LINE SDK config from env variables
 const config = {
@@ -55,7 +56,7 @@ function handleEvent(event) {
     resp.on("end", () => {
       //body = JSON.parse(body);
       console.log(body);
-      //var echo = { type: 'text', text: "You said: " +  body.text };
+      echo = { type: 'text', text: "You said: " +  body.message.text };
     });
     // A chunk of data has been recieved.
     // resp.on('data', (chunk) => {
@@ -95,7 +96,7 @@ function handleEvent(event) {
 
 
   // use reply API
-  return client.replyMessage(event.replyToken, "You said: " + body);
+  return client.replyMessage(event.replyToken, echo);
 }
 
 // listen on port
