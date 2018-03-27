@@ -40,12 +40,12 @@ function handleEvent(event) {
   const echo = { type: 'text', text: "You said: " + event.message.text };
    console.log("pappu12323");
 
-   const https = require('https');
-
 
    https.get('https://jsonplaceholder.typicode.com/posts/1', (resp) => {
     let data = '';
-   
+    console.log("httpin");
+
+
     // A chunk of data has been recieved.
     resp.on('data', (chunk) => {
       data += chunk;
