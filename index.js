@@ -2,6 +2,7 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
+const http = require('http');
 
 // create LINE SDK config from env variables
 const config = {
@@ -36,16 +37,15 @@ function handleEvent(event) {
   } 
 
   // create a echoing text message
-    if(event.message.text == "hey")
-    {
-      const echo = { type: 'text', text: "Hey There, Your Message : " + event.message.text };
-    }else if(event.message.text.indexOf("faiq") >= 0)
-    {
-      const echo = { type: 'text', text: "OKay i am Forwarding this to Faiq, You Message: " + event.message.text };
-    }else
-    {
-      const echo = { type: 'text', text: "You said: " + event.message.text };
-    } 
+  const echo = { type: 'text', text: "You said: " + event.message.text };
+   
+http.get("http://66.228.117.22/RestTest1/test.aspx", function(res){
+
+  echo = { type: 'text', text: "You said: " + res };
+
+});
+
+
   // use reply API
   return client.replyMessage(event.replyToken, echo);
 }
