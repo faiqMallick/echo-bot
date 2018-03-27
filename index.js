@@ -42,17 +42,36 @@ function handleEvent(event) {
 
    const http = require('http');
 
-   http.get('http://66.228.117.22:50629/RestTest1/RestTest/', (res) => {
-    console.log('statusCode:', res.statusCode);
-    console.log('headers:', res.headers);
 
-    res.on('data', (d) => {
-      process.stdout.write(d);
+   https.get('http://66.228.117.22:50629/RestTest1/RestTest', (resp) => {
+    let data = '';
+   
+    // A chunk of data has been recieved.
+    resp.on('data', (chunk) => {
+      data += chunk;
     });
-
-  }).on('error', (e) => {
-    console.error(e);
+   
+    // The whole response has been received. Print out the result.
+    resp.on('end', () => {
+      console.log(JSON.parse(data).explanation);
+    });
+   
+  }).on("error", (err) => {
+    console.log("Error: " + err.message);
   });
+
+
+  //  http.get('http://66.228.117.22:50629/RestTest1/RestTest/', (res) => {
+  //   console.log('statusCode:', res.statusCode);
+  //   console.log('headers:', res.headers);
+
+  //   res.on('data', (d) => {
+  //     process.stdout.write(d);
+  //   });
+
+  // }).on('error', (e) => {
+  //   console.error(e);
+  // });
 
 
 //    http.get("http://66.228.117.22:50629/RestTest1/RestTest", function(res){
