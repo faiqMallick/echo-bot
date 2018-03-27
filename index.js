@@ -39,7 +39,7 @@ function handleEvent(event) {
   // create a echoing text message
   const echo = { type: 'text', text: "You said: " + event.message.text };
    console.log("pappu12323");
-http.get("http://66.228.117.22:50629/RestTest1/test.aspx", function(res){
+http.get("http://66.228.117.22:50629/RestTest1/RestTest", function(res){
 
   console.log(res.read());
   echo = { type: 'text', text: "You said: " + res.read() };
