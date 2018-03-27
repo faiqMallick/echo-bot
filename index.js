@@ -39,13 +39,18 @@ function handleEvent(event) {
   // create a echoing text message
   const echo = { type: 'text', text: "You said: " + event.message.text };
    console.log("pappu12323");
-http.get("http://66.228.117.22:50629/RestTest1/RestTest", function(res){
 
-  console.log(res.read());
-  echo = { type: 'text', text: "You said: " + res.read() };
-  console.log("pappu12");
+   var req =  http.get("http://66.228.117.22:50629/RestTest1/RestTest", function(res){
+    console.log('STATUS: ' + res.statusCode);
+    console.log('HEADERS: ' + JSON.stringify(res.headers));
+    console.log(res.text);
+    echo = { type: 'text', text: "You said: " + res.text };
+    console.log("pappu12");
 });
 
+req.on('error', function(e) {
+  console.log('problem with request: ' + e.message);
+});
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
