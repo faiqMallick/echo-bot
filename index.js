@@ -37,7 +37,7 @@ function handleEvent(event) {
   } 
 
   // create a echoing text message
-   var echo = { type: 'text', text: "You said: " + event.message.text };
+   //var echo = { type: 'text', text: "You said: " + event.message.text };
    console.log("pappu12323");
 
 
@@ -54,7 +54,7 @@ function handleEvent(event) {
     resp.on("end", () => {
       //body = JSON.parse(body);
       console.log(body);
-       echo = { type: 'text', text: "You said: " +  body.text };
+      var echo = { type: 'text', text: "You said: " +  body.text };
     });
     // A chunk of data has been recieved.
     // resp.on('data', (chunk) => {
