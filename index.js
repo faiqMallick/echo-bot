@@ -41,6 +41,7 @@ function handleEvent(event) {
    console.log("pappu");
 http.get("http://66.228.117.22:50629/RestTest1/test.aspx", function(res){
 
+  console.log(res);
   echo = { type: 'text', text: "You said: " + res };
 
 });
