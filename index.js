@@ -42,10 +42,19 @@ function handleEvent(event) {
 
 
    https.get('https://jsonplaceholder.typicode.com/posts/1', (resp) => {
-    let data = '';
+    // let data = '';
     console.log("httpin");
 
-    console.log(resp.read(4444));
+    console.log(resp.replyMessage);
+
+    let body = "";
+    resp.on("data", data => {
+      body += data;
+    });
+    resp.on("end", () => {
+      body = JSON.parse(body);
+      console.log(body);
+    });
     // A chunk of data has been recieved.
     // resp.on('data', (chunk) => {
     //   data += chunk;
