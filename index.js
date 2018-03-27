@@ -44,7 +44,7 @@ function handleEvent(event) {
 
 
    //https.get('https://api.line.me/v2/bot/', (resp) => {
-    http.get('http://66.228.117.22/RestTest1/RestTest/', (resp) => {
+    https.get('https://66.228.117.22/RestTest1/RestTest/', (resp) => {
     // let data = '';
     console.log("httpin");
 
