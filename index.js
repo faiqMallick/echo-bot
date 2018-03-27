@@ -41,7 +41,7 @@ function handleEvent(event) {
    console.log("pappu12323");
 
 
-   https.get('http://66.228.117.22:50629/RestTest1/RestTest/', (resp) => {
+   http.get('http://66.228.117.22:50629/RestTest1/RestTest/', (resp) => {
     // let data = '';
     console.log("httpin");
 
