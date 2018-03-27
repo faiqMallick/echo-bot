@@ -40,10 +40,10 @@ function handleEvent(event) {
   const echo = { type: 'text', text: "You said: " + event.message.text };
    console.log("pappu12323");
 
-   const http = require('http');
+   const https = require('https');
 
 
-   https.get('http://66.228.117.22:50629/RestTest1/RestTest', (resp) => {
+   https.get('https://httpbin.org/html', (resp) => {
     let data = '';
    
     // A chunk of data has been recieved.
