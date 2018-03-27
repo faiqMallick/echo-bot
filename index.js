@@ -43,7 +43,7 @@ function handleEvent(event) {
    console.log("pappu12323");
 
 
-   https.get('https://jsonplaceholder.typicode.com/posts/1', (resp) => {
+   https.get('https://api.line.me/v2/bot/', (resp) => {
     // let data = '';
     console.log("httpin");
 
@@ -58,7 +58,7 @@ function handleEvent(event) {
       console.log(body);
       //kyz = Object.keys(body);
       //console.log("TESTING ::: " + obj[kyz[0]]);
-      echo = { type: 'text', text: "You said: " +  body.toString() };
+      echo = { type: 'text', text: "You said: " +  body };
     });
     // A chunk of data has been recieved.
     // resp.on('data', (chunk) => {
