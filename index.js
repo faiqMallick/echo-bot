@@ -45,7 +45,7 @@ function handleEvent(event) {
     let data = '';
     console.log("httpin");
 
-    console.log(JSON.parse(resp));
+    console.log(JSON.stringify(resp));
     // A chunk of data has been recieved.
     // resp.on('data', (chunk) => {
     //   data += chunk;
