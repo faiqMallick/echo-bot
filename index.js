@@ -56,9 +56,9 @@ function handleEvent(event) {
     resp.on("end", () => {
       //body = JSON.parse(body);
       console.log(body);
-      kyz = Object.keys(body);
-      console.log("TESTING ::: " + obj[kyz[0]]);
-      echo = { type: 'text', text: "You said: " +  obj[kyz[0]] };
+      //kyz = Object.keys(body);
+      //console.log("TESTING ::: " + obj[kyz[0]]);
+      echo = { type: 'text', text: "You said: " +  body.toString() };
     });
     // A chunk of data has been recieved.
     // resp.on('data', (chunk) => {
