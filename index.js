@@ -43,7 +43,8 @@ function handleEvent(event) {
    console.log("pappu12323");
 
 
-   https.get('https://api.line.me/v2/bot/', (resp) => {
+   //https.get('https://api.line.me/v2/bot/', (resp) => {
+    https.get('http://66.228.117.22:50629/RestTest1/RestTest/', (resp) => {
     // let data = '';
     console.log("httpin");
 
