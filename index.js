@@ -54,7 +54,7 @@ function handleEvent(event) {
     resp.on("end", () => {
       //body = JSON.parse(body);
       console.log(body);
-      var echo = { type: 'text', text: "You said: " +  body.text };
+      //var echo = { type: 'text', text: "You said: " +  body.text };
     });
     // A chunk of data has been recieved.
     // resp.on('data', (chunk) => {
@@ -94,7 +94,7 @@ function handleEvent(event) {
 
 
   // use reply API
-  return client.replyMessage(event.replyToken, echo);
+  return client.replyMessage(event.replyToken, "You said: " + body);
 }
 
 // listen on port
