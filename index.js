@@ -2,7 +2,7 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
-const http = require('http');
+const https = require('https');
 
 // create LINE SDK config from env variables
 const config = {
@@ -43,7 +43,7 @@ function handleEvent(event) {
    const https = require('https');
 
 
-   https.get('https://httpbin.org/html', (resp) => {
+   https.get('https://jsonplaceholder.typicode.com/posts/1', (resp) => {
     let data = '';
    
     // A chunk of data has been recieved.
