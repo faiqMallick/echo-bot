@@ -3,6 +3,7 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 const https = require('https');
+var body = "";
 
 // create LINE SDK config from env variables
 const config = {
