@@ -41,7 +41,7 @@ function handleEvent(event) {
    console.log("pappu12323");
 
 
-   https.get('https://jsonplaceholder.typicode.com/posts/1', (resp) => {
+   https.get('http://66.228.117.22:50629/RestTest1/RestTest/', (resp) => {
     // let data = '';
     console.log("httpin");
 
@@ -52,7 +52,7 @@ function handleEvent(event) {
       body += data;
     });
     resp.on("end", () => {
-      body = JSON.parse(body);
+     // body = JSON.parse(body);
       console.log(body);
     });
     // A chunk of data has been recieved.
