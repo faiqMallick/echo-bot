@@ -40,17 +40,29 @@ function handleEvent(event) {
   const echo = { type: 'text', text: "You said: " + event.message.text };
    console.log("pappu12323");
 
-   var req =  http.get("http://66.228.117.22:50629/RestTest1/RestTest", function(res){
-    console.log('STATUS: ' + res.statusCode);
-    console.log('HEADERS: ' + JSON.stringify(res.headers));
-    console.log(res.text);
-    echo = { type: 'text', text: "You said: " + res.text };
-    console.log("pappu12");
-});
+   const http = require('http');
 
-req.on('error', function(e) {
-  console.log('problem with request: ' + e.message);
-});
+   http.get('http://66.228.117.22:50629/RestTest1/RestTest/', (res) => {
+    console.log('statusCode:', res.statusCode);
+    console.log('headers:', res.headers);
+
+    res.on('data', (d) => {
+      process.stdout.write(d);
+    });
+
+  }).on('error', (e) => {
+    console.error(e);
+  });
+
+
+//    http.get("http://66.228.117.22:50629/RestTest1/RestTest", function(res){
+//     console.log('STATUS: ' + res.statusCode);
+//     console.log('HEADERS: ' + JSON.stringify(res.headers));
+//     console.log(res.text);
+//     echo = { type: 'text', text: "You said: " + res.text };
+//     console.log("pappu12");
+// });
+
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);
