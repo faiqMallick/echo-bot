@@ -33,7 +33,7 @@ function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event
     return Promise.resolve(null);
-  }
+  } 
 
   // create a echoing text message
     if(event.message.text == "hey")
