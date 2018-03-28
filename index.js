@@ -83,9 +83,25 @@ request.post({
   url:     'http://66.228.117.22/RestTest/',
   body:   event.message.text //"20060461"
 }, function(error, response, body){
-  console.log("WS1044LOG "+body);
-  console.log("FROM LINE :: "+event.message.text );
+  console.log("WS1044LOG "+ body);
+  console.log("FROM LINE :: "+ event.message.text );
+  echo = { type: 'text', text: "You said: " +  body };
 });
+
+
+  //   http.get('http://66.228.117.22/RestTest/', (resp) => {
+  //   console.log("httpin");
+  //   let body = "";
+  //   resp.on("data", data => {
+  //     body += data;
+  //   });
+  //   resp.on("end", () => {
+  //     console.log(body);
+  //     echo = { type: 'text', text: "You said: " +  body };
+  //   });   
+  // }).on("error", (err) => {
+  //   console.log("Error: " + err.message);
+  // });
 
 
   //  http.get('http://66.228.117.22:50629/RestTest1/RestTest/', (res) => {
@@ -111,7 +127,7 @@ request.post({
 
 
   // use reply API
-  return client.replyMessage(event.replyToken, body);
+  return client.replyMessage(event.replyToken, echo);
 }
 
 // listen on port
