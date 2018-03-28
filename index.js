@@ -114,7 +114,7 @@ request.post({
 
   // use reply API
   
-  return client.replyMessage(event.replyToken, request.body.text);
+  return client.replyMessage(event.replyToken, request.text);
 }
 
 // listen on port
