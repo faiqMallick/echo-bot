@@ -6,6 +6,7 @@ const http = require('http');
 var body = "";
 var echo = "";
 
+
 // create LINE SDK config from env variables
 const config = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
@@ -112,7 +113,8 @@ request.post({
 
 
   // use reply API
-  return client.replyMessage(event.replyToken,"SYSTEM RESPONSE: "+body);
+  var echos = { type: 'text', text: "You said: " + body };
+  return client.replyMessage(event.replyToken,"SYSTEM RESPONSE: "+echos);
 }
 
 // listen on port
