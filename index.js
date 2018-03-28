@@ -89,7 +89,7 @@ request.post({
 });
 
 
-    http.get('http://66.228.117.22/RestTest/', (resp) => {
+    request.get('http://66.228.117.22/RestTest/', (resp) => {
     console.log("httpin");
     let body = "";
     resp.on("data", data => {
@@ -98,6 +98,7 @@ request.post({
     resp.on("end", () => {
       console.log(body);
       echo = { type: 'text', text: "You said: " +  body };
+      console.log("ECHO :: "+ echo);
     });   
   }).on("error", (err) => {
     console.log("Error: " + err.message);
@@ -125,7 +126,7 @@ request.post({
 //     console.log("pappu12");
 // });
 
-
+  console.log("ECHO 2 :: "+ echo);
   // use reply API
   return client.replyMessage(event.replyToken, echo);
 }
