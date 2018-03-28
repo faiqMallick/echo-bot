@@ -114,6 +114,7 @@ request.post({
 
   // use reply API
   var echos = { type: 'text', text: "You said: " + body };
+  console.log("WS1044 LOG BEFORE REPLY LINE:"+echos);
   return client.replyMessage(event.replyToken,"SYSTEM RESPONSE: "+echos);
 }
 
