@@ -6,7 +6,6 @@ const http = require('http');
 var body = "";
 var echo = "";
 
-
 // create LINE SDK config from env variables
 const config = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
@@ -82,14 +81,9 @@ function handleEvent(event) {
 request.post({
   headers: {'content-type' : 'application/x-www-form-urlencoded'},
   url:     'http://66.228.117.22/RestTest/',
-  body:   event.message.text //"20060461"
+  body:   event.message.type //"20060461"
 }, function(error, response, body){
-  console.log("WS1044 LINE MESSAGE:"+event.message.text);
-  console.log("WS1044 LOG:"+body);
-  console.log("WS1044 LOG:"+request);
-   
-  console.log("WS1044 LOG BEFORE REPLY LINE:"+body);
-  return client.replyMessage(event.replyToken,"SYSTEM RESPONSE: "+body);
+  console.log(body);
 });
 
 
@@ -116,9 +110,7 @@ request.post({
 
 
   // use reply API
-  //var echos = { type: 'text', text: "You said: " + body };
-  //console.log("WS1044 LOG BEFORE REPLY LINE:"+echos);
- /////////////// return client.replyMessage(event.replyToken,"SYSTEM RESPONSE: "+echos);
+  return client.replyMessage(event.replyToken, echo);
 }
 
 // listen on port
