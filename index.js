@@ -77,7 +77,7 @@ function handleEvent(event) {
 
   */
 
-  var request = require('http');
+  var request = require('request');
 request.post({
   headers: {'content-type' : 'application/x-www-form-urlencoded'},
   url:     'http://66.228.117.22/RestTest/',
