@@ -81,7 +81,7 @@ function handleEvent(event) {
 request.post({
   headers: {'content-type' : 'application/x-www-form-urlencoded'},
   url:     'http://66.228.117.22/RestTest/',
-  body:    "20060461"
+  body:   event.message.text //"20060461"
 }, function(error, response, body){
   console.log("WS1044 LOG:"+body);
   console.log("WS1044 LOG:"+request);
