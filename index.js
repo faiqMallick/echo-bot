@@ -87,6 +87,9 @@ request.post({
   console.log("WS1044 LINE MESSAGE:"+event.message.text);
   console.log("WS1044 LOG:"+body);
   console.log("WS1044 LOG:"+request);
+   
+  console.log("WS1044 LOG BEFORE REPLY LINE:"+body);
+  return client.replyMessage(event.replyToken,"SYSTEM RESPONSE: "+body);
 });
 
 
@@ -113,9 +116,9 @@ request.post({
 
 
   // use reply API
-  var echos = { type: 'text', text: "You said: " + body };
-  console.log("WS1044 LOG BEFORE REPLY LINE:"+echos);
-  return client.replyMessage(event.replyToken,"SYSTEM RESPONSE: "+echos);
+  //var echos = { type: 'text', text: "You said: " + body };
+  //console.log("WS1044 LOG BEFORE REPLY LINE:"+echos);
+ /////////////// return client.replyMessage(event.replyToken,"SYSTEM RESPONSE: "+echos);
 }
 
 // listen on port
