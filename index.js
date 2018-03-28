@@ -83,8 +83,8 @@ request.post({
   url:     'http://66.228.117.22/RestTest/',
   body:    "20060461"
 }, function(error, response, body){
-  console.log(body);
-  console.log(request);
+  console.log("WS1044 LOG:"+body);
+  console.log("WS1044 LOG:"+request);
 });
 
 
