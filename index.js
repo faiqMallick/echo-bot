@@ -112,6 +112,7 @@ request.post({
 
 
   // use reply API
+  console.log("WS1044 BEFORE REPLYING TO LINE: "+body);
   return client.replyMessage(event.replyToken, echo);
 }
 
