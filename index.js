@@ -86,6 +86,7 @@ request.post({
 
   console.log("WS1044 LOG "+event.message.text);
   console.log("WS1044 LOG "+body);
+  
 });
 
 
@@ -112,8 +113,8 @@ request.post({
 
 
   // use reply API
-  console.log("WS1044 BEFORE REPLYING TO LINE: "+body);
-  return client.replyMessage(event.replyToken, echo);
+  
+  return client.replyMessage(event.replyToken, request.body);
 }
 
 // listen on port
