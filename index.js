@@ -86,7 +86,7 @@ request.post({
 }, function(error, response, body){
   console.log("WS1044LOG "+ body);
   console.log("FROM LINE :: "+ event.message.text );
-  echo = { type: 'text', text: "You said: " +  body };
+  echo = { type: 'text', text: body };
 });
 
 
