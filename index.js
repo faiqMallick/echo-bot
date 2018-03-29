@@ -42,7 +42,7 @@ function handleEvent(event) {
    //var echo = { type: 'text', text: "You said: " + event.message.text };
    console.log("pappu12323");
 
-/*
+
    //https.get('https://api.line.me/v2/bot/', (resp) => {
     http.get('http://66.228.117.22/RestTest/', (resp) => {
     // let data = '';
@@ -75,34 +75,20 @@ function handleEvent(event) {
     console.log("Error: " + err.message);
   });
 
-  */
-
-  var request = require('request');
-request.post({
-  headers: {'content-type' : 'application/x-www-form-urlencoded'},
-  url:     'http://66.228.117.22/RestTest/',
-  body:   event.message.text //"20060461"
-}, function(error, response, body){
-  console.log("WS1044LOG "+ body);
-  console.log("FROM LINE :: "+ event.message.text );
   
-});
+
+//   var request = require('request');
+// request.post({
+//   headers: {'content-type' : 'application/x-www-form-urlencoded'},
+//   url:     'http://66.228.117.22/RestTest/',
+//   body:   event.message.text //"20060461"
+// }, function(error, response, body){
+//   console.log("WS1044LOG "+ body);
+//   console.log("FROM LINE :: "+ event.message.text );
+  
+// });
 
 
-    request.get('http://66.228.117.22/RestTest/', (resp) => {
-    console.log("httpin");
-    let body = "";
-    resp.on("data", data => {
-      body += data;
-    });
-    resp.on("end", () => {
-      console.log(body);
-      echo = { type: 'text', text: "You said: " +  body };
-      console.log("ECHO :: "+ echo);
-    });   
-  }).on("error", (err) => {
-    console.log("Error: " + err.message);
-  });
 
 
   //  http.get('http://66.228.117.22:50629/RestTest1/RestTest/', (res) => {
